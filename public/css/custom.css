@@ -37,32 +37,26 @@ a, a:hover{
 	color: #333;
 }
 
+.spacer20, .spacer40, .spacer60 {
+	padding: 10px;
+	clear: both;
+}
+
+.spacer20 {
+	height: 20px;
+}
+
+.spacer40 {
+	height: 40px;
+}
+
+.spacer60 {
+	height: 60px;
+}
+
 .footer {
 	clear: both;
 	padding-top: 10px;
-}
-.post, .project {
-	margin-top: 40px;
-    background:#FFF; 
-    border:1px solid #CCC;
-}
-
-.project {
-    background:#EEE;
-    overflow: hidden;
-}
-
-.post:hover, .project:hover {
-    border:1px solid #4976d0;
-}
-
-.post-inner, .project-inner {
-	margin: 10px;
-}
-
-.project-icon {
-	max-height: 60px;
-	margin:10px;
 }
 
 .header {
@@ -122,7 +116,7 @@ a, a:hover{
 	background-color: #e4e4e4;
 	width: 100%;
 	height: 40px;
-	margin-bottom: 2px;
+	margin-bottom: 20px;
     cursor:pointer;
     font-weight: bold;
 }
@@ -150,6 +144,7 @@ a, a:hover{
 .myBtn, .formBtn {
 	display: block;
 	width: 160px;
+	text-align: center;
 	margin-top: 20px;
 	margin-left:auto;
 	margin-right:auto;
@@ -162,7 +157,6 @@ a, a:hover{
 }
 
 .formBtn {
-	width: 100px;
     background:none; 
     border:1px solid #4976d0;
 }
@@ -189,3 +183,4 @@ a, a:hover{
     margin-left:auto;
     margin-right:auto;
 }
+

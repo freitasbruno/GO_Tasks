@@ -1,36 +1,34 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>GO</title>
+@extends('layouts.master')
 
-		<!-- General CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-        
-        <!-- Custom CSS -->
-		<link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css">
-		<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>		
-		<!-- JS Files -->
-		<script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <a href="{{ URL::to('/') }}"><div class="title">GO</div></a>
-                <a href="{{ URL::to('register') }}" class="myBtn">I'm a new user!</a>
-                <div class="contact-form">
-	                <h2>Login Form</h2>
-					{!! Form::open(array('url' => 'login')) !!}
-						{!! csrf_field() !!}
-						{!! Form::label('email', 'Email Address') !!}
-						{!! Form::text('email') !!}
-						<br>
-						{!! Form::label('password', 'Password') !!}
-						{!! Form::password('password') !!}
-						<br>
-						{!! Form::submit('Login', array('class' => 'formBtn')) !!}
-					{!! Form::close() !!}
-            	</div>
-            </div>
-        </div>
-    </body>
-</html>
+@section('header')
+
+	<div class="header">
+		<h1>LOGIN</h1>
+	    <hr class="simple-line">
+	</div>
+
+@stop
+
+@section('content') 
+
+    
+    <div class="contact-form">
+		{!! Form::open(array('url' => 'login')) !!}
+			{!! csrf_field() !!}
+			{!! Form::label('email', 'Email Address') !!}
+			{!! Form::text('email') !!}
+			<br>
+			{!! Form::label('password', 'Password') !!}
+			{!! Form::password('password') !!}
+			<div class="spacer20"></div>
+			{!! Form::submit('Login', array('class' => 'formBtn')) !!}
+			
+		{!! Form::close() !!}
+		
+	</div>
+	<div class="spacer40"></div>
+	<div class="text-center">
+    	<h4><a href="{{ URL::to('register') }}" >Don't have a username? Register here!</a></h4>
+    </div>
+	
+@stop

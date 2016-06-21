@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'mail@bitlab.pt', 'name' => 'GO Contact Form'],
 
     /*
     |--------------------------------------------------------------------------

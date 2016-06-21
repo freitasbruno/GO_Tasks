@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/home', function () {
+    return view('home');
 });
 
 Route::get('register', function () {
@@ -79,7 +83,24 @@ Route::get('delete_group/{group_id}', function ($group_id) {
 	return Redirect::to('profile');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
 
+Route::post('/contact', function () {
+
+	$userName = Input::get('name');
+	$userEmail = Input::get('email');
+	$userMessage = Input::get('message');
+	
+	Mail::send('emails.contactForm', ['userName' => $userName, 'userEmail' => $userEmail, 'content' => $userMessage], function ($message) {
+	    $message->from(Input::get('email'), Input::get('name'))
+	    		->to('freitascbruno@gmail.com')
+	    		->subject('GO Contact Form');
+	});
+	
+    return view('home');
+});
 
 Route::get('/dbedit', function () {
 	/*
