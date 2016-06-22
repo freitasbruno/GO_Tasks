@@ -210,6 +210,7 @@ return [
 		'Input' => Illuminate\Support\Facades\Input::class,
 		
         'Group' => App\Models\Group::class,
+        'Item' => App\Models\Group::class,
         'User' => App\Models\User::class
 
     ],
