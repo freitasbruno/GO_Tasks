@@ -50,7 +50,7 @@
 	    		<div class="small">GO . Group Organizer | BITLAB 2016</div>	
     		</div>
     	</div>
-        
+    	
         <!-- jQuery -->
 	    <script src="{{ asset('js/jquery.js') }}"></script>
 	
@@ -58,10 +58,14 @@
 	    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	    
         <!-- JS Files -->
-		<script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
-		<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+		<!--<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>-->
+		
+		@yield('scripts')
 		
     </body>
 </html>

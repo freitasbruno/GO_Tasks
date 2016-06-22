@@ -121,6 +121,10 @@ a, a:hover{
     font-weight: bold;
 }
 
+.editGroup {
+	display: none;
+}
+
 .groupText {
 	width:80%;
 	padding:10px 15px; 
@@ -129,8 +133,7 @@ a, a:hover{
 }
 .deleteBtn {
 	color: #ccc;
-	padding:15px 15px;
-	width: 100%;
+	padding:15px 5px;
 }
 
 .deleteBtn:hover {

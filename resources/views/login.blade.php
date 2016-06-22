@@ -1,17 +1,13 @@
 @extends('layouts.master')
 
 @section('header')
-
 	<div class="header">
 		<h1>LOGIN</h1>
 	    <hr class="simple-line">
 	</div>
-
 @stop
 
 @section('content') 
-
-    
     <div class="contact-form">
 		{!! Form::open(array('url' => 'login')) !!}
 			{!! csrf_field() !!}

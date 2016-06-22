@@ -8,7 +8,7 @@
 		$current_group = null;
 	}
 	
-	$group_matches = array('user_id' => $user->id, 'parent_id' => $current_group_id, 'visible' => 1);
+	$group_matches = array('user_id' => $user->id, 'parent_id' => $current_group_id);
 	$groups = Group::where($group_matches)->orderBy('name')->get();
 	 
 ?>
@@ -46,37 +46,49 @@
         
     	@foreach($groups as $group)
 			<div class="col-md-4">
-				<div class="groupBtn" id="{{ $group->id }}">
-					{!! Form::open(array('url' => 'edit_group', 'class' => 'editGroup')) !!}
-						{!! csrf_field() !!}
-						{!! Form::text('name', $group->name, array('style'=>'float:left; width:80%; height:40px')) !!}
-						{!! Form::hidden('id', $group->id) !!}
-						{!! Form::submit('&#10004;', array('style'=>'width:20%; height:40px')) !!}
-					{!! Form::close() !!}
-					<a href="{{ URL::to('profile/' . $group->id) }}">
-						<div class="groupText">
-							{{ $group->name }}
-						</div>
-					</a>
-					<a onClick="editGroup('{{ $group->id }}')">
-							<span class="glyphicon glyphicon-pencil small deleteBtn" aria-hidden="true"></span>
-					</a>
-					<a href="{{ URL::to('delete_group/' . $group->id) }}">
-							<span class="glyphicon glyphicon-remove small deleteBtn" aria-hidden="true"></span>
-					</a>
+				<div class="groupBtn">
+				<a href="{{ URL::to('profile/' . $group->id) }}">
+					<div class="groupText">
+						{{ $group->name }}
+					</div>
+				</a>
+				<a class="editGroup" onClick="editGroup('{{ $group->name }}', '{{ $group->id }}')" href="#">
+						<span class="glyphicon glyphicon-pencil small deleteBtn" aria-hidden="true"></span>
+				</a>
+				<a href="{{ URL::to('delete_group/' . $group->id) }}">
+						<span class="glyphicon glyphicon-remove small deleteBtn" aria-hidden="true"></span>
+				</a>
 				</div>
 			</div>
 		@endforeach
 		
-		<div class="col-md-4" id="newGroup">
-			<div class="groupBtn">
+		<div class="col-md-4">
+			<div class="groupBtn" >
 			{!! Form::open(array('url' => 'new_group')) !!}
 				{!! csrf_field() !!}
 				{!! Form::text('name', '', array('placeholder'=>'NEW GROUP', 'style'=>'float:left; width:80%; height:40px')) !!}
-				{!! Form::submit('&#43;', array('style'=>'width:20%; height:40px')) !!}
-			{!! Form::close() !!}
+				{!! Form::submit('+', array('style'=>'width:20%; height:40px')) !!}
 			</div>
 		</div>
+		{!! Form::close() !!}
 	</div>
 
+@stop	
+
+@section('scripts')
+	<script type="text/javascript" src="{{ asset('js/bootbox.min.js') }}"></script>
+	
+	<script>
+		function editGroup(groupName, groupId) {
+		   bootbox.prompt({
+			  title: "Edit Group",
+			  value: groupName,
+			  callback: function(result) {
+			  	console.log(groupName + " edited")
+			  	post('/editGroup/', {name: groupName});
+			  }
+			});
+		}
+		
+    </script>
 @stop

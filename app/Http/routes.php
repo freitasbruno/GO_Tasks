@@ -67,6 +67,15 @@ Route::post('new_group', function () {
 	return Redirect::to('profile');
 });
 
+Route::post('edit_group', function () {
+	$group = Group::find(Input::get('id'));
+	$group->name = Input::get('name');
+	$group->save();
+	
+	$theEmail = Input::get('email');
+	return Redirect::to('profile');
+});
+
 Route::get('profile', array(
 	'middleware' => 'auth', 
 	function () {
@@ -79,7 +88,11 @@ Route::get('profile/{group_id}', function ($group_id) {
 });
 
 Route::get('delete_group/{group_id}', function ($group_id) {
-	Group::destroy($group_id);
+	$group = Group::find($group_id);
+	$group->visible = 0;
+	$group->save();
+	
+	//Group::destroy($group_id);
 	return Redirect::to('profile');
 });
 

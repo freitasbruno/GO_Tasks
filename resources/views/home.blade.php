@@ -10,9 +10,10 @@
 	    <h3>
 	    	Group Organizer
 	    </h3>
-	    <h3 class="text-center">
+	    <h3 class="intro">
 	    	<span class="small">
-	    		GO is a boilerplate for creating apps that store information in a Group hierarchy structure. 
+	    		GO is a boilerplate for creating apps that store information in a Group hierarchy structure.
+	    		It supports user authentication and includes a GROUP model, with interfaces for creating, renaming and deleting groups. 
 	    	</span>
 	    </h3>
 	</div>
