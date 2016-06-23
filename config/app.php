@@ -213,7 +213,7 @@ return [
 		'Input' => Illuminate\Support\Facades\Input::class,
 		
         'Group' => App\Models\Group::class,
-        'Item' => App\Models\Group::class,
+        'Item' => App\Models\Item::class,
         'User' => App\Models\User::class
 
     ],
