@@ -76,6 +76,23 @@ Route::post('edit_group', function () {
 	return Redirect::to('profile');
 });
 
+Route::post('new_task', function () {
+	
+	$item = new Item;
+	$item->parent_id = session()->get('current_group');
+	$item->name = Input::get('name');
+	$item->visible = 1;
+	$item->save();
+	
+	$task = new Task;
+	$task->parent_id = $item->id;
+	$task->complete = 0;
+	$task->visible = 1;
+	$task->save();
+	
+	return Redirect::to('profile');
+});
+
 Route::get('profile', array(
 	'middleware' => 'auth', 
 	function () {

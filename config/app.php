@@ -213,8 +213,8 @@ return [
 		'Input' => Illuminate\Support\Facades\Input::class,
 		
         'Group' => App\Models\Group::class,
-        'Item' => App\Models\Group::class,
-        'Task' => App\Models\Group::class,
+        'Item' => App\Models\Item::class,
+        'Task' => App\Models\Task::class,
         'User' => App\Models\User::class
 
     ],

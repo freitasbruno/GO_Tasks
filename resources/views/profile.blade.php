@@ -10,18 +10,20 @@
 	
 	$group_matches = array('user_id' => $user->id, 'parent_id' => $current_group_id, 'visible' => 1);
 	$groups = Group::where($group_matches)->orderBy('name')->get();
-	 
+	
+	$item_matches = array('parent_id' => $current_group_id, 'visible' => 1);
+	$items = Item::where($item_matches)->orderBy('created_at')->get();
 ?>
 
 @extends('layouts.master')
 
 @section('header')
+	@if($current_group_id == 0)
 		<h1>{{ $user->name }}</h1>
 	    <hr>
 	    <a href="{{ URL::to('logout') }}" class="btn btn-info myBtn">LOGOUT</a>
 	    <div class="spacer60"></div>
-	</div>
-
+	@endif
 @stop
 
 @section('content') 
@@ -40,7 +42,29 @@
         <div class="spacer20"></div>
     </div>
     
-    <div class="row"></div>
+    @if($current_group_id != 0)
+		<div class="col-md-8 col-centered">
+	    	@include('layouts.new_task')
+	    	
+	    	@if($items != null)
+		    	<ul class="list-group">
+			    	@foreach($items as $item)
+						<li class="list-group-item">{{ $item->name }}</li>
+					@endforeach
+				</ul>
+				@if(count($items) > 9)
+		    		@include('layouts.new_task')
+		    	@endif
+		    @endif
+	    </div>
+	    <div class="spacer20"></div>
+	    <hr>
+	    <div class="spacer20"></div>
+    @endif
+    
+    
+    
+    <div class="row">
     	@foreach($groups as $group)
 			<div class="col-md-4">
 				<div class="groupBtn" id="{{ $group->id }}">
@@ -74,6 +98,5 @@
 			{!! Form::close() !!}
 			</div>
 		</div>
-	</div>
-
+	</div>	
 @stop
