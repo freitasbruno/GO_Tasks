@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('header')
-	<h1>Welcome to GO</h1>
+	<h1>Welcome to GO Tasks</h1>
 	<h3>{{ $theEmail }}</h3>
     <hr>
 @stop

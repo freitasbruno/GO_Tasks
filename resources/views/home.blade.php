@@ -3,16 +3,16 @@
 @section('header')
 
 	<h1>
-    	GO
+    	GO Tasks
     </h1>
     <hr>
     <h3>
-    	Group Organizer
+    	Task Manager
     </h3>
     <h3 class="intro">
     	<span class="small">
-    		GO is a boilerplate for creating apps that store information in a Group hierarchy structure.
-    		It supports user authentication and includes a GROUP model, with interfaces for creating, renaming and deleting groups. 
+    		GO Tasks is a Task manager that uses a Group hierarchy structure.
+    		It is based on GO . Group Organizer, supports user authentication and includes models for GROUPS, ITEMS and TASKS, with interfaces for creating, renaming and deleting instances. 
     	</span>
     </h3>
 

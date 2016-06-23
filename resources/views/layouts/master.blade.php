@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>GO . Bitlab</title>
+        <title>GO Tasks . Bitlab</title>
 
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
@@ -50,7 +50,7 @@
     	<div class="container">
     		<div class="col-md-6 col-centered text-center">
 	    		<hr>
-	    		<div class="small">GO . Group Organizer | BITLAB 2016</div>
+	    		<div class="small">GO Tasks . Task Manager | BITLAB 2016</div>
 	    	</div>
 	    	<div class="spacer20"></div>
     	</div>

@@ -214,6 +214,7 @@ return [
 		
         'Group' => App\Models\Group::class,
         'Item' => App\Models\Group::class,
+        'Task' => App\Models\Group::class,
         'User' => App\Models\User::class
 
     ],
