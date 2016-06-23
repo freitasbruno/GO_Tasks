@@ -19,36 +19,40 @@
     	
 	    <!-- Navigation -->
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="navigation">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			            <span class="sr-only">Toggle navigation</span>
-			            <span class="icon-bar"></span>
-			        </button>
-			        <a class="navbar-brand" href="{{ URL::to('/') }}"><img src="{{ asset('images/go_logo.png') }}" class="nav-icon"/></a>
-			    </div>
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			        <ul class="nav navbar-nav pull-right">
-			            	<li><a href="{{ URL::to('/home') }}">HOME</a></li>
-			            	<li><a href="{{ URL::to('/contact') }}">CONTACT</a></li>
-			        </ul>
-			    </div>
-			    <!-- /.navbar-collapse -->
-			</div>
-		<!-- /.container -->
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="{{ URL::to('/') }}"><img src="{{ asset('images/go_logo.png') }}" class="nav-icon"/></a>
+		    </div>
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		        <ul class="nav navbar-nav pull-right">
+		            	<li><a href="{{ URL::to('/home') }}">HOME</a></li>
+		            	<li><a href="{{ URL::to('/contact') }}">CONTACT</a></li>
+		        </ul>
+		    </div>
+		    <!-- /.navbar-collapse -->
 		</nav>
     	
     	<div class="container">
-    		
-    		@yield('header')
-    		@yield('content')
-    		
-    		<div id="footer">
-	    		<hr>
-	    		<div class="small">GO . Group Organizer | BITLAB 2016</div>	
+    		<div class="col-md-6 col-centered text-center">
+    			@yield('header')
     		</div>
+    	</div>
+    	
+    	<div class="container">
+    		@yield('content')
+    	</div>
+    	
+    	<div class="container">
+    		<div class="col-md-6 col-centered text-center">
+	    		<hr>
+	    		<div class="small">GO . Group Organizer | BITLAB 2016</div>
+	    	</div>
+	    	<div class="spacer20"></div>
     	</div>
     	
         <!-- jQuery -->

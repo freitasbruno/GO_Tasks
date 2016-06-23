@@ -16,23 +16,17 @@
 @extends('layouts.master')
 
 @section('header')
-
-	<div class="header">
 		<h1>{{ $user->name }}</h1>
-	    <hr class="simple-line">
-	    <a href="{{ URL::to('logout') }}" class="myBtn">LOGOUT</a>
+	    <hr>
+	    <a href="{{ URL::to('logout') }}" class="btn btn-info myBtn">LOGOUT</a>
 	    <div class="spacer60"></div>
-	    <!--
-        <p>Your user ID is {{ session()->get('user_id') }}</p>
-        <p>Current group is {{ session()->get('current_group') }}</p>
-        -->
 	</div>
 
 @stop
 
 @section('content') 
 
-    <div class="row">
+	<div class="col-md-4 col-centered text-center">
     	@if($current_group_id == 0)
         	<h2>My Groups</h2>
         @else
@@ -43,7 +37,10 @@
         		&ensp;{{ $current_group->name }}
         	</h2>
         @endif
-        
+        <div class="spacer20"></div>
+    </div>
+    
+    <div class="row"></div>
     	@foreach($groups as $group)
 			<div class="col-md-4">
 				<div class="groupBtn" id="{{ $group->id }}">

@@ -1,29 +1,20 @@
 @extends('layouts.master')
 
 @section('header')
-
-	<div class="header">
-		<h1>REGISTER</h1>
-	    <hr class="simple-line">
-	</div>
-
+	<h1>REGISTER</h1>
+    <hr>
 @stop
 
 @section('content') 
-
-	<div class="contact-form">
-		{!! Form::open(array('url' => 'register')) !!}
-			{!! Form::label('name', 'Name') !!}
-			{!! Form::text('name') !!}
-			<br>
-			{!! Form::label('email', 'Email Address') !!}
-			{!! Form::text('email') !!}
-			<br>
-			{!! Form::label('password', 'Password') !!}
-			{!! Form::password('password') !!}
+	<div class="spacer40"></div>
+	<div class="col-md-4 col-centered">
+		{!! BootForm::open(array('url' => 'register')) !!}
+			{!! BootForm::text('name') !!}
+			{!! BootForm::email() !!}
+			{!! BootForm::password() !!}
 			<div class="spacer20"></div>
-			{!! Form::submit('Register', array('class' => 'formBtn')) !!}
-		{!! Form::close() !!}
+			{!! BootForm::submit('Register') !!}
+		{!! BootForm::close() !!}
 	</div>
 	<div class="spacer40"></div>
 	<div class="text-center">

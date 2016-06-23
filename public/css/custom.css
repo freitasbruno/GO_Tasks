@@ -1,40 +1,18 @@
-html, body {
-    height: 100%;
-}
-
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: table;
-    font-weight: 100;
-    font-family: 'Yantramanav', serif;
-    max-width: 1200px;
-    margin-left:auto;
-    margin-right:auto;
+	padding-top:100px;
+	
 }
 
-label, text, password {
-	display: block;
-}
-
-label {
-	margin-top: 20px;
-}
-
-hr {
-	margin-top:50px;
-	margin-bottom:30px;
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Yantramanav', serif;
 }
 
 input, textarea, select {
 	width: 100%;
 }
 
-
-a, a:hover{
-	text-decoration: none;
-	color: #333;
+.simple-line {
+    margin: 0;
 }
 
 .spacer20, .spacer40, .spacer60 {
@@ -54,62 +32,29 @@ a, a:hover{
 	height: 60px;
 }
 
-.footer {
-	clear: both;
-	padding-top: 10px;
-}
-
-.header {
-	padding-top: 100px;
-	max-width: 600px;
-    text-align: center;
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.content {
-    text-align: center;
-    display: block;
-}
-
-.content-blog {
-	margin-bottom: 50px;
-}
-
-.contact-form {
-	text-align: left;
-	max-width: 600px;
-    margin-left:auto;
-    margin-right:auto;
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }
 
 .navbar-nav {
-	text-align: right;	
-}
-
-.simple-line {
-    margin: 0;
-}
-
-.logo {
-	max-width: 200px;
+	text-align: right
 }
 
 .nav-icon {
 	max-height: 25px;
 }
 
-.container {
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    
+.intro {
+	text-align: justify;
 }
 
 .title {
-	font-family: 'Lato';
-    font-size: 96px;
+	font-size: 4em;	
+}
+
+.myBtn {
+	width: 140px;
 }
 
 .groupBtn {
@@ -131,6 +76,7 @@ a, a:hover{
 	text-align:center;
 	float:left;
 }
+
 .deleteBtn {
 	color: #ccc;
 	padding:15px 5px;
@@ -143,47 +89,3 @@ a, a:hover{
 .groupText:hover {
 	border:1px solid #4976d0;
 }
-
-.myBtn, .formBtn {
-	display: block;
-	width: 160px;
-	text-align: center;
-	margin-top: 20px;
-	margin-left:auto;
-	margin-right:auto;
-    padding:5px 15px; 
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; 
-}
-
-.formBtn {
-    background:none; 
-    border:1px solid #4976d0;
-}
-
-.myBtn:hover, .formBtn:hover {
-    background:#4976d0;
-    color: #eee;
-}
-
-
-.todolist {
-	text-align: left;
-}
-
-.navigation {
-	max-width: 1200px;	
-	margin-left:auto;
-	margin-right:auto;
-}
-
-.intro {
-	max-width: 600px;
-	text-align: justify;
-    margin-left:auto;
-    margin-right:auto;
-}
-

@@ -149,6 +149,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
+        Watson\BootstrapForm\BootstrapFormServiceProvider::class,
         
         /*
          * Application Service Providers...
@@ -207,6 +208,8 @@ return [
         
         'Form' => Collective\Html\FormFacade::class,
 		'Html' => Collective\Html\HtmlFacade::class,
+		'HTML'     => Collective\Html\HtmlFacade::class,
+		'BootForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
 		'Input' => Illuminate\Support\Facades\Input::class,
 		
         'Group' => App\Models\Group::class,

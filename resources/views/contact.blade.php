@@ -2,38 +2,29 @@
 
 @section('header')
 
-	<div class="header">
-	    <h1>
-	    	CONTACT
-	    </h1>
-	    <hr class="simple-line">
-	    <h3>
-	    	<span class="small">
-	    		Send me your comments and queries.<br>
-	    		Fill the form below or email me at {{ Html::mailto('mail@bitlab.pt') }}
-	    	</span>
-	    </h3>
-	</div>
+	<h1>
+    	CONTACT
+    </h1>
+    <hr>
+    <h3>
+    	<span class="small">
+    		Send me your comments and queries.<br>
+    		Fill the form below or email me at {{ Html::mailto('mail@bitlab.pt') }}
+    	</span>
+    </h3>
 
 @stop
 
 @section('content')
 
-	<div class="content">
-	    <div class="contact-form">
-			{!! Form::open(array('url' => 'contact')) !!}
-				{!! Form::label('name', 'Name') !!}
-				{!! Form::text('name') !!}
-				<br>
-				{!! Form::label('email', 'Email Address') !!}
-				{!! Form::text('email') !!}
-				<br>
-				{!! Form::label('message', 'Message') !!}
-				{!! Form::textarea('message') !!}
-				<br>
-				{!! Form::submit('Send', array('class' => 'formBtn')) !!}
-			{!! Form::close() !!}
-		</div>
+	<div class="spacer40"></div>
+	<div class="col-md-6 col-centered">
+		{!! BootForm::open(array('url' => 'contact')) !!}
+			{!! BootForm::text('name') !!}
+			{!! BootForm::email() !!}
+			{!! BootForm::textarea('message') !!}
+			{!! BootForm::submit('Send') !!}
+		{!! BootForm::close() !!}
 	</div>
 
 @stop

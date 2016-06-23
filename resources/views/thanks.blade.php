@@ -1,15 +1,14 @@
 @extends('layouts.master')
 
 @section('header')
-
-	<div class="header">
-		<h1>Welcome to GO</h1>
-		<h3>{{ $theEmail }}</h3>
-	    <hr class="simple-line">
-	</div>
-
+	<h1>Welcome to GO</h1>
+	<h3>{{ $theEmail }}</h3>
+    <hr>
 @stop
 
 @section('content') 
-    <a href="{{ URL::to('login') }}" class="myBtn">Login</a>
+	<div class="spacer40"></div>
+	<div class="col-md-4 col-centered text-center">
+   		<a href="{{ URL::to('login') }}" class="btn btn-info myBtn">LOGIN</a>
+   	</div>
 @stop
