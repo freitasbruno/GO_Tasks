@@ -69,8 +69,21 @@
     		@include('layouts.groupBtn')
 		@endforeach
 		
+<<<<<<< HEAD
+		<div class="col-md-4" id="newGroup">
+			<div class="groupBtn">
+			{!! Form::open(array('url' => 'new_group')) !!}
+				{!! csrf_field() !!}
+				{!! Form::text('name', '', array('placeholder'=>'NEW GROUP', 'style'=>'float:left; width:80%; height:40px')) !!}
+				{!! Form::submit('&#43;', array('style'=>'width:20%; height:40px')) !!}
+			{!! Form::close() !!}
+			</div>
+		</div>
+	</div>	
+=======
 		@include('layouts.newGroup')
 		
 	</div>
 
+>>>>>>> upstream/master
 @stop
