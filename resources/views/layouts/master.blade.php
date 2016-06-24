@@ -47,12 +47,8 @@
     		@yield('content')
     	</div>
     	
-    	<div class="container">
-    		<div class="col-md-6 col-centered text-center">
-	    		<hr>
-	    		<div class="small">GO Tasks . Task Manager | BITLAB 2016</div>
-	    	</div>
-	    	<div class="spacer20"></div>
+    	<div class="footer">
+		    <p class="text-muted text-center">GO . Group Organizer | BITLAB 2016</p>
     	</div>
     	
         <!-- jQuery -->

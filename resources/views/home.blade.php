@@ -23,7 +23,7 @@
 	<div class="spacer20"></div>
 	<div class="col-md-4 col-centered text-center">
 	    @if(Auth::check())
-	    	<a href="{{ URL::to('profile') }}" class="myBtn">MY PROFILE</a>
+	    	<a href="{{ URL::to('profile') }}" class="btn btn-info myBtn">MY PROFILE</a>
 	    @else
 	    	<a href="{{ URL::to('login') }}" class="btn btn-info myBtn">LOGIN</a>
 	    @endif
