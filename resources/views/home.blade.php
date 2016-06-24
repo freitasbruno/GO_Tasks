@@ -32,10 +32,10 @@
 		<h3>DOWNLOAD</h3>
 		<h3 class="text-center">
 	    	<span class="small">
-	    		GO is a Open Source project, the source code is available on Github for download!
+	    		GO Tasks is a Open Source project, the source code is available on Github for download!
 	    	</span>
 	    	<div class="spacer20"></div>
-	    	<a href="{{ URL::to('https://github.com/freitasbruno/GO.git') }}" target="blank"><img src="{{ asset('images/GitHub-Mark-64px.png') }}" /></a>
+	    	<a href="{{ URL::to('https://github.com/freitasbruno/GO_Tasks.git') }}" target="blank"><img src="{{ asset('images/GitHub-Mark-64px.png') }}" /></a>
 	    </h3>
 	</div>
 	

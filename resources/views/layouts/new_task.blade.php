@@ -1,9 +1,9 @@
 {!! Form::open(array('url' => 'new_task')) !!}
 	{!! csrf_field() !!}
-	<div class="input-group">
-      <input type="text" class="form-control" name="name" placeholder="New Task">
+	<div class="input-group input-group-lg">
+      <input type="text" class="form-control" name="name" placeholder="New Item...">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-plus small"></span></button>
       </span>
     </div><!-- /input-group -->
     <!--

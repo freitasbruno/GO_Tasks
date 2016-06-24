@@ -12,7 +12,16 @@
 	$groups = Group::where($group_matches)->orderBy('name')->get();
 	
 	$item_matches = array('parent_id' => $current_group_id, 'visible' => 1);
-	$items = Item::where($item_matches)->orderBy('created_at')->get();
+	$groupItems = Item::where($item_matches)->orderBy('created_at')->get();
+	
+	foreach ($groupItems as $item){
+		$task_match = array('parent_id' => $item->id);
+		$task = Task::where($task_match)->get();
+		$item['task'] = $task;
+		$item['complete'] = $task[0]->complete;
+	}
+	
+	$items = $groupItems->sortBy('complete');
 ?>
 
 @extends('layouts.master')
@@ -42,35 +51,39 @@
         <div class="spacer20"></div>
     </div>
     
-    @if($current_group_id != 0)
+    @if($current_group_id != 0 && count($groups) == 0)
 		<div class="col-md-8 col-centered">
 	    	@include('layouts.new_task')
-	    	
-	    	@if($items != null)
-		    	<ul class="list-group">
-			    	@foreach($items as $item)
-						<li class="list-group-item">{{ $item->name }}</li>
-					@endforeach
-				</ul>
+	    	<div class="spacer20"></div>
+	    	@if(count($items) > 0)
+		    	@foreach($items as $item)
+					@include('layouts.task')
+				@endforeach
+				
 				@if(count($items) > 9)
+					<div class="spacer20"></div>
 		    		@include('layouts.new_task')
+		    		<div class="spacer60"></div>
 		    	@endif
+		    	
 		    @endif
 	    </div>
-	    <div class="spacer20"></div>
-	    <hr>
-	    <div class="spacer20"></div>
     @endif
     
-    
-    
-    <div class="row">
+    @if(count($items) == 0)
     	@foreach($groups as $group)
-    		@include('layouts.groupBtn')
+    		<div class="col-md-4">
+    			@include('layouts.groupBtn')
+    		</div>
 		@endforeach
 		
+		@if(count($groups) == 0)
+			<div class="spacer40"></div>
+			<div class="col-md-8 col-centered" id="newGroup">
+		@else
+			<div class="col-md-4" id="newGroup">
+		@endif
 		@include('layouts.newGroup')
-		
-	</div>
-
+		</div>
+	@endif
 @stop

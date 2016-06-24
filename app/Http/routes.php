@@ -93,6 +93,22 @@ Route::post('new_task', function () {
 	return Redirect::to('profile');
 });
 
+Route::get('delete_task/{item_id}', function ($item_id) {
+	$item = Item::find($item_id);
+	$item->visible = 0;
+	$item->save();
+	
+	return Redirect::to('profile');
+});
+
+Route::get('toggle_task/{task_id}', function ($task_id) {
+	$task = Task::find($task_id);
+	$task->complete = !($task->complete);
+	$task->save();
+	
+	return Redirect::to('profile');
+});
+
 Route::get('profile', array(
 	'middleware' => 'auth', 
 	function () {
