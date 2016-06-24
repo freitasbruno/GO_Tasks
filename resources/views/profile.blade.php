@@ -42,38 +42,11 @@
     
     <div class="row"></div>
     	@foreach($groups as $group)
-			<div class="col-md-4">
-				<div class="groupBtn" id="{{ $group->id }}">
-					{!! Form::open(array('url' => 'edit_group', 'class' => 'editGroup')) !!}
-						{!! csrf_field() !!}
-						{!! Form::text('name', $group->name, array('style'=>'float:left; width:80%; height:40px')) !!}
-						{!! Form::hidden('id', $group->id) !!}
-						{!! Form::submit('&#10004;', array('style'=>'width:20%; height:40px')) !!}
-					{!! Form::close() !!}
-					<a href="{{ URL::to('profile/' . $group->id) }}">
-						<div class="groupText">
-							{{ $group->name }}
-						</div>
-					</a>
-					<a onClick="editGroup('{{ $group->id }}')">
-							<span class="glyphicon glyphicon-pencil small deleteBtn" aria-hidden="true"></span>
-					</a>
-					<a href="{{ URL::to('delete_group/' . $group->id) }}">
-							<span class="glyphicon glyphicon-remove small deleteBtn" aria-hidden="true"></span>
-					</a>
-				</div>
-			</div>
+    		@include('layouts.groupBtn')
 		@endforeach
 		
-		<div class="col-md-4" id="newGroup">
-			<div class="groupBtn">
-			{!! Form::open(array('url' => 'new_group')) !!}
-				{!! csrf_field() !!}
-				{!! Form::text('name', '', array('placeholder'=>'NEW GROUP', 'style'=>'float:left; width:80%; height:40px')) !!}
-				{!! Form::submit('&#43;', array('style'=>'width:20%; height:40px')) !!}
-			{!! Form::close() !!}
-			</div>
-		</div>
+		@include('layouts.newGroup')
+		
 	</div>
 
 @stop

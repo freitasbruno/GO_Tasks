@@ -59,33 +59,28 @@ input, textarea, select {
 
 .groupBtn {
 	background-color: #e4e4e4;
-	width: 100%;
-	height: 40px;
-	margin-bottom: 20px;
-    cursor:pointer;
-    font-weight: bold;
-}
-
-.editGroup {
-	display: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .groupText {
-	width:80%;
-	padding:10px 15px; 
 	text-align:center;
-	float:left;
+	font-weight: bold;
+	width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
 }
 
-.deleteBtn {
-	color: #ccc;
-	padding:15px 5px;
+.groupBtnAddon {
+	width:50px;
 }
 
-.deleteBtn:hover {
-	color: #333;
+.editGroup {
+
+	display: none;
 }
 
-.groupText:hover {
-	border:1px solid #4976d0;
+.groupBtn:hover, .groupText:hover, .groupBtnAddon:hover{
+	background-color: #5bc0de;
+	color: #FFF;
 }
