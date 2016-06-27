@@ -14,6 +14,7 @@
         <!-- Custom CSS -->
 		<link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css">
 		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
     <body>
